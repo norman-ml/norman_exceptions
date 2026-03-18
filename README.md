@@ -1,7 +1,5 @@
-# Norman Objects
+# Norman Exceptions
 
-Norman Objects is a shared library that defines the core request and response classes used across the Norman SDK and internal services.
+Norman Objects is a shared library that defines the core exception classes used across the Norman SDK and internal services.
 
-The library includes classes, enums, and other structured objects that establish clear, consistent, type-safe contracts between backend services and SDK clients.
-
-For the full reference and detailed instructions, please visit our documentation at https://sdk.norman-ai.com/api/api-reference-overview/objects.
+For the full reference and detailed instructions, please visit our documentation at https://sdk.norman-ai.com/api/api-reference-overview/exceptions.
