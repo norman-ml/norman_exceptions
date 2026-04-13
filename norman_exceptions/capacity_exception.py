@@ -2,7 +2,8 @@ from norman_exceptions.norman_exception import NormanException
 
 
 class CapacityException(NormanException):
-    status_code: int = 402
+    http_code: int = 402
+    grpc_code: int = 9
     error_type: str = "capacity"
 
     def __init__(
@@ -13,7 +14,8 @@ class CapacityException(NormanException):
     ):
 
         super().__init__(
-            status_code=self.status_code,
+            http_code=self.http_code,
+            grpc_code=self.grpc_code,
             error_type=self.error_type,
             message=message,
             cause=cause,

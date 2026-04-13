@@ -2,7 +2,8 @@ from norman_exceptions.norman_exception import NormanException
 
 
 class AuthorizationException(NormanException):
-    status_code: int = 403
+    http_code: int = 403
+    grpc_code: int = 7
     error_type: str = "authorization"
 
     def __init__(
@@ -13,7 +14,8 @@ class AuthorizationException(NormanException):
     ):
 
         super().__init__(
-            status_code=self.status_code,
+            http_code=self.http_code,
+            grpc_code=self.grpc_code,
             error_type=self.error_type,
             message=message,
             cause=cause,

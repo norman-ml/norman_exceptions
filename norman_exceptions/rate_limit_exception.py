@@ -2,7 +2,8 @@ from norman_exceptions.norman_exception import NormanException
 
 
 class RateLimitException(NormanException):
-    status_code: int = 429
+    http_code: int = 429
+    grpc_code: int = 8
     error_type: str = "rate_limit"
 
     def __init__(
@@ -13,7 +14,8 @@ class RateLimitException(NormanException):
     ):
 
         super().__init__(
-            status_code=self.status_code,
+            http_code=self.http_code,
+            grpc_code=self.grpc_code,
             error_type=self.error_type,
             message=message,
             cause=cause,

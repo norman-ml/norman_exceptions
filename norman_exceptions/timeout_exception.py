@@ -2,7 +2,8 @@ from norman_exceptions.norman_exception import NormanException
 
 
 class TimeoutException(NormanException):
-    status_code: int = 504
+    http_code: int = 504
+    grpc_code: int = 4
     error_type: str = "timeout"
 
     def __init__(
@@ -13,7 +14,8 @@ class TimeoutException(NormanException):
     ):
 
         super().__init__(
-            status_code=self.status_code,
+            http_code=self.http_code,
+            grpc_code=self.grpc_code,
             error_type=self.error_type,
             message=message,
             cause=cause,

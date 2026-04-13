@@ -2,7 +2,8 @@ from norman_exceptions.norman_exception import NormanException
 
 
 class ConfigurationException(NormanException):
-    status_code: int = 400
+    http_code: int = 400
+    grpc_code: int = 3
     error_type: str = "configuration"
 
     def __init__(
@@ -13,7 +14,8 @@ class ConfigurationException(NormanException):
     ):
 
         super().__init__(
-            status_code=self.status_code,
+            http_code=self.http_code,
+            grpc_code=self.grpc_code,
             error_type=self.error_type,
             message=message,
             cause=cause,
